@@ -131,6 +131,7 @@ Komento palautti `root`, eikä sudo kysynyt salasanaa.
 
 *SSH-kirjautuminen ja salasanaton sudo toimivat.*
 
+
 ## b) Antero
 
 Tein käyttäjän asetuksia varten oman Ansible-roolin:
@@ -156,6 +157,7 @@ Rooli:
 *Antero-roolissa luodaan käyttäjä, ryhmä, SSH-avain ja sudoers-asetus.*
 
 Huomasin myös tehtävän tehdessä, että terminaalissa toimiva "autotäyttö" tabilla toimii paremmin kuin olin tiennyt. TÄmä nopeutti tehtävän tekoa huomattavasti ja vähensi kirjoitusvirheitä.
+
 
 ## c) Package
 
@@ -251,6 +253,7 @@ stat /tmp/ansible-test.txt
 ![Ansiblella luotu tekstitiedosto ja oikeudet](images/tekstitiedostok.png)
 
 *Kuvassa näkyvät tiedoston sisältö, omistaja, ryhmä sekä oikeudet `0640/-rw-r-----`.*
+
 
 ## e) Jotain muuta
 
