@@ -155,7 +155,7 @@ Rooli:
 
 *Antero-roolissa luodaan käyttäjä, ryhmä, SSH-avain ja sudoers-asetus.*
 
-Huomasin myös tehtävää tehdessä, että terminaalin **Tab-täydennys** helpotti pitkien komentojen ja polkujen kirjoittamista paljon enemmän kuin olin tiennyt. Tämä säästää aikaa, kun kirjoittamisen ja kirjoitusvirheiden määrä laskee huomattavasti.
+Huomasin myös tehtävän tehdessä, että terminaalissa toimiva "autotäyttö" tabilla toimii paremmin kuin olin tiennyt. TÄmä nopeutti tehtävän tekoa huomattavasti ja vähensi kirjoitusvirheitä.
 
 ## c) Package
 
