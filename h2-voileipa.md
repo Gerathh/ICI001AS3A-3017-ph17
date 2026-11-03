@@ -295,4 +295,4 @@ active (running)
 
 ## Tekoälyn käyttö
 
-Pyysin apua tekoälyltä Markdownin kanssa (prompt: "muunna tämä markdowniksi" ja uppasin tekstitiedoston)
+Pyysin apua tekoälyltä Markdownin kanssa (prompt: "muunna tämä markdowniksi" ja uppasin alkuperäisen tekstitiedoston)
