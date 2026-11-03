@@ -150,7 +150,7 @@ Rooli:
 
 ![Ansible-hakemistorakenne](images/hakemistot.png)
 
-*Ansible-projektin roolirakenne.*
+*Ansible-projektin rooli-rakenne tässä vaiheessa.*
 
 ![Antero-roolin main.yml](images/mainyml.png)
 
