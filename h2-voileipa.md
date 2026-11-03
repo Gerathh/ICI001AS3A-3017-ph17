@@ -1,3 +1,5 @@
+##Tekijä Jere Pellinen 2026 [edit 3.11.2026 klo 17.58]
+
 # x) Lue ja tiivistä
 
 ### Karvinen 2026: Sudo without password
