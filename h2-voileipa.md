@@ -292,4 +292,4 @@ active (running)
 
 ## Tekoälyn käyttö
 
-Pyysin apua tekoälyltä MarkDownin kanssa.
+Alkuperäisessä tekstissä käytin notepad++:aa. Pyysin apua tekoälyltä Markdownin kanssa promptilla "muunna tämä markdowniksi"
