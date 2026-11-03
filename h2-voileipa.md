@@ -57,8 +57,8 @@
 
 - `path` - tiedoston tai hakemiston polku
 - `recurse` - tekee muutokset myös alihakemistoihin
-- `src` - lähde esimerkiksi linkille
-- `state` - esimerkiksi `directory`, `file` tai `absent`
+- `src` - lähde esim. linkille
+- `state` - esim. `directory`, `file` tai `absent`
 - `owner`, `group`, `mode` - omistaja ja oikeudet
 
 ```yaml
@@ -70,8 +70,8 @@
 ### user
 
 - `name` - käyttäjän nimi
-- `create_home` - luodaanko kotihakemisto
-- `comment` - käyttäjän kuvaus
+- `create_home` - luodaan(ko) kotihakemisto
+- `comment` - käyttäjän kuvaus tai kommentti
 - `groups` - käyttäjän ryhmät
 - `shell` - käytettävä shell
 - `state` - esim. `present` tai `absent`
@@ -100,7 +100,7 @@
 
 ## a) Sudoless
 
-Tein Ansiblea varten `antero`-käyttäjän, jolla sudoa voi käyttää ilman salasanaa. Ensimmäinen ajo ei onnistunut ilman sudo-salasanaa. Ajoin playbookin uudelleen parametrilla:
+Tein Ansiblea varten käyttäjän nimeltä `antero`. 'antero' voi käyttää sudoa ilman salasanaa. Ensimmäinen ajo ei onnistunut ilman (sudo)salasanaa. Ajoin playbookin uudelleen parametrilla:
 
 ```bash
 ansible-playbook site.yml -i hosts.ini --ask-become-pass
@@ -266,7 +266,7 @@ Määritin SSH-palvelun käynnissä olevaksi ja samalla käynnistymään automaa
     enabled: true
 ```
 
-Tässä:
+Elikkä:
 
 - `name: ssh` tarkoittaa hallittavaa palvelua
 - `state: started` varmistaa, että palvelu on käynnissä
@@ -292,4 +292,4 @@ active (running)
 
 ## Tekoälyn käyttö
 
-Alkuperäisessä tekstissä käytin notepad++:aa. Pyysin apua tekoälyltä Markdownin kanssa promptilla "muunna tämä markdowniksi"
+Pyysin apua tekoälyltä Markdownin kanssa (prompt: "muunna tämä markdowniksi" ja uppasin tekstitiedoston)
