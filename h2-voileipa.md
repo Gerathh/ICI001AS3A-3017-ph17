@@ -296,3 +296,9 @@ active (running)
 ## Tekoälyn käyttö
 
 Pyysin apua tekoälyltä Markdownin kanssa (prompt: "muunna tämä markdowniksi" ja uppasin alkuperäisen tekstitiedoston)
+
+## Lähteet [Edit 3.11.2027 klo 17.37]
+https://terokarvinen.com/palvelinten-hallinta
+https://terokarvinen.com/passwordless-sudo/
+https://xkcd.com/149/
+
