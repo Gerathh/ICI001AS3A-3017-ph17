@@ -299,8 +299,11 @@ active (running)
 
 Pyysin apua tekoälyltä Markdownin kanssa (prompt: "muunna tämä markdowniksi" ja uppasin alkuperäisen tekstitiedoston)
 
-## Lähteet [Edit 3.11.2027 klo 17.37]
-https://terokarvinen.com/palvelinten-hallinta
-https://terokarvinen.com/passwordless-sudo/
-https://xkcd.com/149/
+## Lähteet [Edit 3.11.2026 klo 17.37][Edit 5.11.2026 klo 19:44, lisätty vuosiluvut ja lukupäivämäärä lähteisiin ja muokattu lähteiden rivitystä]
+
+https://terokarvinen.com/palvelinten-hallinta kirjoittanut Tero Karvinen, luettu 3.11.2026
+
+https://terokarvinen.com/passwordless-sudo/ kirjoittanut Tero Karvinen, luettu 3.11.2026
+
+https://xkcd.com/149/ tekijä tuntematon, luettu 3.11.2026
 
