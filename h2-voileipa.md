@@ -299,7 +299,7 @@ active (running)
 
 Pyysin apua tekoälyltä Markdownin kanssa (prompt: "muunna tämä markdowniksi" ja uppasin alkuperäisen tekstitiedoston)
 
-## Lähteet [Edit 3.11.2026 klo 17.37][Edit 5.11.2026 klo 19:44, lisätty vuosiluvut ja lukupäivämäärä lähteisiin ja muokattu lähteiden rivitystä]
+## Lähteet [Edit 3.11.2026 klo 17.37] [Edit 5.11.2026 klo 19:44, lisätty vuosiluvut ja lukupäivämäärä lähteisiin ja muokattu lähteiden rivitystä]
 
 https://terokarvinen.com/palvelinten-hallinta kirjoittanut Tero Karvinen, luettu 3.11.2026
 
