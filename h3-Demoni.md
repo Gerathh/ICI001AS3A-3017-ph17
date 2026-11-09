@@ -68,7 +68,7 @@ Tarkistin tilanteen komennolla:
 sudo ss -ltnp '( sport = :80 )'
 ```
 
-Tulosteessa näkyi `caddy`. Pysäytin sen:
+Tulosteessa näkyi `caddy` joten pysäytin sen:
 
 ```bash
 sudo systemctl stop caddy
@@ -77,7 +77,7 @@ sudo systemctl stop caddy
 
 ![Onko portti 80 vapaa?](images/palomuurintarkistus.png)
 
-*portti 80 oli Caddyn käytössä*
+*Portti 80 oli Caddyn käytössä*
 
 Sitten asensin Apachen:
 
