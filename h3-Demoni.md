@@ -501,7 +501,7 @@ Muutamia huomioita:
 - Älä pidä kahta web-palvelinta samanaikaisesti päällä koska portit on varattu http-liikenteelle (portti 80) tai https-liikenteelle (portti 443). On siis ongelmallista, jos kaksi softaa koittaa vastata samaan aikaan.
 - curl -I http://localhost on käytännöllinen koska se näyttää enemmän tietoja oletuksena kuin mitä selaimen kautta saa.
 - Handler käynnistää palvelut automaattisesti uudelleen tarvittaessa.
-- Pienetkin asiat, kuten puuttuva hakemisto tai HTML:n merkistöt, voivat viedä ylimääräsistä aikaa. Eli kannattaa olla tarkkana kun kirjoittaa.
+- Pienetkin asiat, kuten puuttuva hakemisto tai HTML:n merkistöt jne., voivat viedä ylimääräsistä aikaa. Eli kannattaa olla tarkkana kun kirjoittaa.
 - Paikallinen virtuaalikone on mainio paikka harjoitteluun
 - "händler" olisi suomalaiseen suuhun sopivampi nimi
 
