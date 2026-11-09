@@ -1,11 +1,10 @@
 # h3 Demoni
 
-- **Tekijä:** Jere Pellinen
+- 9.11.2026 tekijä **Jere Pellinen**
 - **Kurssi:** Palvelinten hallinta ICI001AS3A-3017-ph17
 - **Oppilaitos:** Haaga-Helia ammattikorkeakoulu
 - **Opettaja:** Tero Karvinen
-- **Ympäristö:** Debian 13, Hyper-V, localhost
-- **Päivämäärä:** 9.11.2026
+- **Ympäristö:** Debian 13, Hyper-V, paikallinen virtuaalikone
 
 ## x) Lue ja tiivistä
 
