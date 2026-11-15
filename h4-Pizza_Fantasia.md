@@ -46,39 +46,39 @@
 
 - Valitsin asennettavaksi Ecplipse Mosquitton. Se on kevyt, avoimen lähdekoddin viestinvälittäjä (message broker). Mosquitoo käyttää MQTTT protokollaa, ja mahdollistaa IoT laitteiden ja muitten laitteiden välisen kommunikoinnin.
 - Aloitin asentamisen: 
-- ![Asennus](images\asennusensin.png)
+- ![Asennus](images/asennusensin.png)
 
-- Tässä vaiheessa kannattaa testata ovatko portit 1883, 1884 ja 1885 vapaana: 'sudo ss -ltnp '( sport = :1883 or sport = :1884 or sport = :1885 )'
+- Tässä vaiheessa kannattaa testata ovatko portit 1883, 1884 ja 1885 vapaana: `sudo ss -ltnp '( sport = :1883 or sport = :1884 or sport = :1885 )'`
 
-- Muokkasin tämän jälkeen configurointitiedostoa 'sudo nano /etc/mosquitto/conf.d/h4.conf' ja lisäsin sinne kaksi riviä: 'listener 1884 127.0.0.1' 
+- Muokkasin tämän jälkeen configurointitiedostoa `sudo nano /etc/mosquitto/conf.d/h4.conf` ja lisäsin sinne kaksi riviä: `listener 1884 127.0.0.1` 
 
 ja 
 
-'allow_anonymous true'
+`allow_anonymous true`
 
 
 
 - Koitin käynnistää palvelua uudestaan, mutta tuli virheilmoitus.
-- Aloitin vian selvittämisen 'systemctl status mosquitto' -komennolla joka näyttää ohjelman tilan. 
-- Tämän jälkeen varmistin luomani configuraatiotiedoston oikeellisuuden 'sudo cat -n /etc/mosquitto/conf.d/h4.conf' 
-- Sitten lokien tulostamisella 'sudo tail -n 40 /var/log/mosquitto/mosquitto.log'
+- Aloitin vian selvittämisen `systemctl status mosquitto` -komennolla joka näyttää ohjelman tilan. 
+- Tämän jälkeen varmistin luomani configuraatiotiedoston oikeellisuuden `sudo cat -n /etc/mosquitto/conf.d/h4.conf` 
+- Sitten lokien tulostamisella `sudo tail -n 40 /var/log/mosquitto/mosquitto.log`
 
-![Virheilmoitus](images\error.png)
+![Virheilmoitus](images/error.png)
 *Virheilmoitus sekä vianselvitystä*
 
-- Suoritettuani 'sudo journalctl -u mosquitto -n 20 --no-pager' huomasin, että minulla oli kirjoitusvirhe h4.conf:ssa. 
-- 'sudo nano /etc/mosquitto/conf.d/h4.conf' ja korjasin sielät toisen rivin kirjoitusvirheen 'allow anonymous true' --> 'allow_anonymous true'
+- Suoritettuani `sudo journalctl -u mosquitto -n 20 --no-pager` huomasin, että minulla oli kirjoitusvirhe h4.conf:ssa. 
+- `sudo nano /etc/mosquitto/conf.d/h4.conf` ja korjasin sielät toisen rivin kirjoitusvirheen `allow anonymous true` --> `allow_anonymous true`
 
 -Tämän jälkeen mosquitto käynnistyi uudelleen ilman ongelmia
 
-![Käynnistyi uudelleen](kaynnistyi.png)
+![Käynnistyi uudelleen](images/kaynnistyi.png)
 *mosquitto käynnistyi uudelleen*
 
 - Seuravaaksi testasin toimiiko MQTT viestit terminaalin kautta. Avasin kaksi terminaalia rinnakkain. Vasemmassa on vastaanottaja ja oikeassa lähetys.
-- Vastaanottajan ikkunaan: 'mosquitto_sub -h 127.0.0.1 -p 1884 -t 'h4/pizza' -v -C 1'
-- Lähettäjän ikkunaan: 'mosquitto_pub -h 127.0.0.1 -p 1884 -t 'h4/pizza' -m 'Jeren fantasiapizza: viestit toimivat portissa 1884'
+- Vastaanottajan ikkunaan: `mosquitto_sub -h 127.0.0.1 -p 1884 -t 'h4/pizza' -v -C 1`
+- Lähettäjän ikkunaan: `mosquitto_pub -h 127.0.0.1 -p 1884 -t 'h4/pizza' -m 'Jeren fantasiapizza: viestit toimivat portissa 1884'`
 
-![Viestit toimivat](images\viestitok.png)
+![Viestit toimivat](images/viestitok.png)
 *Viestit toimivat*
 
 
@@ -87,35 +87,40 @@ ja
 ### Uudelleenasennus
 
 - Poistin mosquiton, jotaa voin asentaa sen Ansiblella. `sudo apt purge mosquitto`
-- Asennusohjelma hupomautti, että luomaani konfiguraatiotiedostoa ei poistettu joten suoritin `sudo rm -f /etc/mosquitto/conf.d/h4.conf
+- Asennusohjelma hupomautti, että luomaani konfiguraatiotiedostoa ei poistettu joten suoritin `sudo rm -f /etc/mosquitto/conf.d/h4.conf`
 
 
-![Mosquitton poisto](images/purge.png.png)
+![Mosquitton poisto](images/purge.png)
 *Mosquitton poisto*
 
 - Loin tehtävälle oman hakemiston ja Mosquitto toolin kansiot `mkdir -p ~/ansible-h4/roles/mosquitto/{tasks,handlers,templates,defaults}`
 - Kirjoitin ~/ansible/h4.yml -tiedostoon rivit:
   
-- `name: Manage local Mosquitto
+```
+- name: Manage local Mosquitto
   hosts: localhost
   connection: local
   become: true
 
   roles:
-    - mosquitto`
+    - mosquitto
+```
 
 - Testasin paikallisen yhteyden `ansible -i hosts.ini localhost -c local -m ansible.builtin.ping`
   
-  ![Paikallinen yhteys toimii](images\pikallinen.png)
+  ![Paikallinen yhteys toimii](images/pikallinen.png)
   *Paikallinen yhteys toimii*
 
 
 - Tämän jälkeen loin oletusmuuttujan mmosquitton main.yml:_iin: mosquitto_port: 1884
 - Sitten asetuspohja `nano ~/ansible/roles/mosquitto/templates/h4.conf.j2` teksti
- `listener {{ mosquitto_port }} 127.0.0.1
-allow_anonymous true`
+```
+listener {{ mosquitto_port }} 127.0.0.1
+allow_anonymous true
+```
 
 
+```
 ---
 - name: Install Mosquitto and the client tools
   ansible.builtin.apt:
@@ -146,25 +151,28 @@ allow_anonymous true`
     name: mosquitto
     state: started
     enabled: true
+```
 
 
 -Muokkasin vielä `nano ~/ansible/roles/mosquitto/handlers/main.yml` ja kirjoitin sinne:
 
-`- name: Restart Mosquitto
+```
+- name: Restart Mosquitto
   ansible.builtin.service:
     name: mosquitto
-    state: restarted`
+    state: restarted
+```
 
 - Tarkistin tämän jälkeen syntaksin: `ansible-playbook -i hosts.ini h4.yml --syntax-check` ja kaikki oli ok. 
 - Sitten ajoin`ansible-playbook -i hosts.ini h4.yml --ask-become-pass`
 
-![Syntaksi ok](images\syntaksiok.png)
+![Syntaksi ok](images/syntaksiok.png)
 *Syntaksi oli ok*
 
 - Kirjoitin jälleen vasempaan terminaaliin `mosquitto_sub -h 127.0.0.1 -p 1884 -t 'h4/pizza' -v -C 1`
 - Oikeaan terminaallin `mosquitto_pub -h 127.0.0.1 -p 1884 -t 'h4/pizza' -m 'Ansible-asennuksen viestitesti'` 
 
-![Asennus ok ansiblen kautta](images\ansiblemosquittook.png)
+![Asennus ok ansiblen kautta](images/ansiblemosquittook.png)
 *Asennus Ansiblen kautta toimii*
 
 ## c) Asetus
@@ -176,7 +184,7 @@ allow_anonymous true`
 - Tarkistin muutosten toimivuuden vielä käytännössä: vasemmassa temrinaalissa `mosquitto_sub -h 127.0.0.1 -p 1885 -t 'h4/pizza' -v -C 1`
 - Oikeassa terminaalissa: `mosquitto_pub -h 127.0.0.1 -p 1885 -t 'h4/pizza' -m 'Portin vaihto onnistui: 1885'`
 
-![Portin vaihto onnistui](images\portinvaihtook.png)
+![Portin vaihto onnistui](images/portinvaihtook.png)
 *Portin vaihto onnistui*
 
 
