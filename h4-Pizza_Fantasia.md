@@ -4,7 +4,7 @@
 
 - 13.11.2026 tekijä **Jere Pellinen**
 - **Kurssi:** Palvelinten hallinta ICI001AS3A-3017-ph17
-- **Oppilaitos:** Haaga-Helia ammattikorkeakoulu
+- **Oppilaitos:** Haaga-Helia ammattikorkeakoulue
 - **Opettaja:** Tero Karvinen
 - **Ympäristö:** Debian 13, Hyper-V, paikallinen virtuaalikone
 
@@ -48,26 +48,26 @@
 - Aloitin asentamisen: 
 - ![Asennus](images\asennusensin.png)
 
-- Tässä vaiheessa kannattaa testata ovatko portit 1883, 1884 ja 1885 vapaana: 'sudo ss -ltnp '( sport = :1883 or sport = :1884 or sport = :1885 )'
+- Tässä vaiheessa kannattaa testata ovatko portit 1883, 1884 ja 1885 vapaana: ´sudo ss -ltnp ´( sport = :1883 or sport = :1884 or sport = :1885 )´
 
-- Muokkasin tämän jälkeen configurointitiedostoa 'sudo nano /etc/mosquitto/conf.d/h4.conf' ja lisäsin sinne kaksi riviä: 'listener 1884 127.0.0.1' 
+- Muokkasin tämän jälkeen configurointitiedostoa ´sudo nano /etc/mosquitto/conf.d/h4.conf´ ja lisäsin sinne kaksi riviä: ´listener 1884 127.0.0.1´ 
 
 ja 
 
-'allow_anonymous true'
+´allow_anonymous true´
 
 
 
 - Koitin käynnistää palvelua uudestaan, mutta tuli virheilmoitus.
-- Aloitin vian selvittämisen 'systemctl status mosquitto' -komennolla joka näyttää ohjelman tilan. 
-- Tämän jälkeen varmistin luomani configuraatiotiedoston oikeellisuuden 'sudo cat -n /etc/mosquitto/conf.d/h4.conf' 
-- Sitten lokien tulostamisella 'sudo tail -n 40 /var/log/mosquitto/mosquitto.log'
+- Aloitin vian selvittämisen ´systemctl status mosquitto´ -komennolla joka näyttää ohjelman tilan. 
+- Tämän jälkeen varmistin luomani configuraatiotiedoston oikeellisuuden ´sudo cat -n /etc/mosquitto/conf.d/h4.conf´ 
+- Sitten lokien tulostamisella ´sudo tail -n 40 /var/log/mosquitto/mosquitto.log´
 
 ![Virheilmoitus](images\error.png)
 *Virheilmoitus sekä vianselvitystä*
 
-- Suoritettuani 'sudo journalctl -u mosquitto -n 20 --no-pager' huomasin, että minulla oli kirjoitusvirhe h4.conf:ssa. 
-- 'sudo nano /etc/mosquitto/conf.d/h4.conf' ja korjasin sielät toisen rivin kirjoitusvirheen 'allow anonymous true' --> 'allow_anonymous true'
+- Suoritettuani ´sudo journalctl -u mosquitto -n 20 --no-pager´ huomasin, että minulla oli kirjoitusvirhe h4.conf:ssa. 
+- ´sudo nano /etc/mosquitto/conf.d/h4.conf´ ja korjasin sielät toisen rivin kirjoitusvirheen ´allow anonymous true´ --> ´allow_anonymous true´
 
 -Tämän jälkeen mosquitto käynnistyi uudelleen ilman ongelmia
 
@@ -75,8 +75,8 @@ ja
 *mosquitto käynnistyi uudelleen*
 
 - Seuravaaksi testasin toimiiko MQTT viestit terminaalin kautta. Avasin kaksi terminaalia rinnakkain. Vasemmassa on vastaanottaja ja oikeassa lähetys.
-- Vastaanottajan ikkunaan: 'mosquitto_sub -h 127.0.0.1 -p 1884 -t 'h4/pizza' -v -C 1'
-- Lähettäjän ikkunaan: 'mosquitto_pub -h 127.0.0.1 -p 1884 -t 'h4/pizza' -m 'Jeren fantasiapizza: viestit toimivat portissa 1884'
+- Vastaanottajan ikkunaan: ´mosquitto_sub -h 127.0.0.1 -p 1884 -t ´h4/pizza´ -v -C 1´
+- Lähettäjän ikkunaan: ´mosquitto_pub -h 127.0.0.1 -p 1884 -t ´h4/pizza´ -m ´Jeren fantasiapizza: viestit toimivat portissa 1884´
 
 ![Viestit toimivat](images\viestitok.png)
 *Viestit toimivat*
