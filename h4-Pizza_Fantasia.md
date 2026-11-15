@@ -84,7 +84,7 @@
 
 ![Käynnistyi uudelleen](images/kaynnistyi.png)
 
-*mosquitto käynnistyi uudelleen*
+*Mosquitto käynnistyi uudelleen*
 
 - Seuravaaksi testasin toimiiko MQTT viestit terminaalin kautta. Avasin kaksi terminaalia rinnakkain. Vasemmassa on vastaanottaja ja oikeassa lähetys.
 
