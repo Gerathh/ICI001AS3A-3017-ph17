@@ -86,17 +86,17 @@ ja
 
 ### Uudelleenasennus
 
-- Poistin mosquiton, jotaa voin asentaa sen Ansiblella. ´sudo apt purge mosquitto´
-- Asennusohjelma hupomautti, että luomaani konfiguraatiotiedostoa ei poistettu joten suoritin ´sudo rm -f /etc/mosquitto/conf.d/h4.conf
+- Poistin mosquiton, jotaa voin asentaa sen Ansiblella. `sudo apt purge mosquitto`
+- Asennusohjelma hupomautti, että luomaani konfiguraatiotiedostoa ei poistettu joten suoritin `sudo rm -f /etc/mosquitto/conf.d/h4.conf
 
 
 ![Mosquitton poisto](images/purge.png.png)
 *Mosquitton poisto*
 
-- Loin tehtävälle oman hakemiston ja Mosquitto toolin kansiot ´mkdir -p ~/ansible-h4/roles/mosquitto/{tasks,handlers,templates,defaults}´
+- Loin tehtävälle oman hakemiston ja Mosquitto toolin kansiot `mkdir -p ~/ansible-h4/roles/mosquitto/{tasks,handlers,templates,defaults}`
 - Kirjoitin ~/ansible/h4.yml -tiedostoon rivit:
   
-- ´name: Manage local Mosquitto
+- `name: Manage local Mosquitto
   hosts: localhost
   connection: local
   become: true
@@ -104,16 +104,16 @@ ja
   roles:
     - mosquitto`
 
-- Testasin paikallisen yhteyden ´ansible -i hosts.ini localhost -c local -m ansible.builtin.ping´
+- Testasin paikallisen yhteyden `ansible -i hosts.ini localhost -c local -m ansible.builtin.ping`
   
   ![Paikallinen yhteys toimii](images\pikallinen.png)
   *Paikallinen yhteys toimii*
 
 
 - Tämän jälkeen loin oletusmuuttujan mmosquitton main.yml:_iin: mosquitto_port: 1884
-- Sitten asetuspohja ´nano ~/ansible/roles/mosquitto/templates/h4.conf.j2´ teksti
- ´listener {{ mosquitto_port }} 127.0.0.1
-allow_anonymous true´
+- Sitten asetuspohja `nano ~/ansible/roles/mosquitto/templates/h4.conf.j2` teksti
+ `listener {{ mosquitto_port }} 127.0.0.1
+allow_anonymous true`
 
 
 ---
@@ -148,33 +148,33 @@ allow_anonymous true´
     enabled: true
 
 
--Muokkasin vielä ´nano ~/ansible/roles/mosquitto/handlers/main.yml´ ja kirjoitin sinne:
+-Muokkasin vielä `nano ~/ansible/roles/mosquitto/handlers/main.yml` ja kirjoitin sinne:
 
-´- name: Restart Mosquitto
+`- name: Restart Mosquitto
   ansible.builtin.service:
     name: mosquitto
-    state: restarted´
+    state: restarted`
 
-- Tarkistin tämän jälkeen syntaksin: ´ansible-playbook -i hosts.ini h4.yml --syntax-check´ ja kaikki oli ok. 
-- Sitten ajoin´ansible-playbook -i hosts.ini h4.yml --ask-become-pass´
+- Tarkistin tämän jälkeen syntaksin: `ansible-playbook -i hosts.ini h4.yml --syntax-check` ja kaikki oli ok. 
+- Sitten ajoin`ansible-playbook -i hosts.ini h4.yml --ask-become-pass`
 
 ![Syntaksi ok](images\syntaksiok.png)
 *Syntaksi oli ok*
 
-- Kirjoitin jälleen vasempaan terminaaliin ´mosquitto_sub -h 127.0.0.1 -p 1884 -t 'h4/pizza' -v -C 1´
-- Oikeaan terminaallin ´mosquitto_pub -h 127.0.0.1 -p 1884 -t 'h4/pizza' -m 'Ansible-asennuksen viestitesti'´ 
+- Kirjoitin jälleen vasempaan terminaaliin `mosquitto_sub -h 127.0.0.1 -p 1884 -t 'h4/pizza' -v -C 1`
+- Oikeaan terminaallin `mosquitto_pub -h 127.0.0.1 -p 1884 -t 'h4/pizza' -m 'Ansible-asennuksen viestitesti'` 
 
 ![Asennus ok ansiblen kautta](images\ansiblemosquittook.png)
 *Asennus Ansiblen kautta toimii*
 
 ## c) Asetus
 
-- Muutin tiedostossa nano ´~/ansible/roles/mosquitto/defaults/main.yml´ arvoksi ´mosquitto_port: 1885´
-- Ajoin uudelleen ´ansible-playbook -i hosts.ini h4.yml --ask-become-pass´
-- Sitten ajoin ´cat /etc/mosquitto/conf.d/h4.conf´ ja ´sudo ss -ltnp '( sport = :1883 or sport = :1884 or sport = :1885 )'´
+- Muutin tiedostossa nano `~/ansible/roles/mosquitto/defaults/main.yml` arvoksi `mosquitto_port: 1885`
+- Ajoin uudelleen `ansible-playbook -i hosts.ini h4.yml --ask-become-pass`
+- Sitten ajoin `cat /etc/mosquitto/conf.d/h4.conf` ja `sudo ss -ltnp '( sport = :1883 or sport = :1884 or sport = :1885 )'`
 - Muutokset näkyivät oikein.
-- Tarkistin muutosten toimivuuden vielä käytännössä: vasemmassa temrinaalissa ´mosquitto_sub -h 127.0.0.1 -p 1885 -t 'h4/pizza' -v -C 1´
-- Oikeassa terminaalissa: ´mosquitto_pub -h 127.0.0.1 -p 1885 -t 'h4/pizza' -m 'Portin vaihto onnistui: 1885'´
+- Tarkistin muutosten toimivuuden vielä käytännössä: vasemmassa temrinaalissa `mosquitto_sub -h 127.0.0.1 -p 1885 -t 'h4/pizza' -v -C 1`
+- Oikeassa terminaalissa: `mosquitto_pub -h 127.0.0.1 -p 1885 -t 'h4/pizza' -m 'Portin vaihto onnistui: 1885'`
 
 ![Portin vaihto onnistui](images\portinvaihtook.png)
 *Portin vaihto onnistui*
