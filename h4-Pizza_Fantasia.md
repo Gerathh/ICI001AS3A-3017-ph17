@@ -10,9 +10,6 @@
 
 ## x) Lue ja tiivistä
 
-
-## x) Lue ja tiivistä
-
 ### 4.12.1 Size and Complexity of Some DSLs, s. 112
 
 - DSL:t (Domain-Specific Language) voivat olla erittäin monimutkaisia ja isoja.
