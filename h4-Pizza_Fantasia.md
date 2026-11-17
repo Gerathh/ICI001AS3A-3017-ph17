@@ -411,7 +411,6 @@ systemctl show mosquitto -p MainPID -p ExecMainStartTimestamp
 
 *Viimeinen testi*
 
-*Idempotenssi*
 
 ## Loppupohdinta
 
