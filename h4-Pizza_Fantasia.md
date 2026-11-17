@@ -405,8 +405,6 @@ systemctl show mosquitto -p MainPID -p ExecMainStartTimestamp
 
 ## Lähteet
 
-## Lähteet
-
 - **Karvinen, T. 2023.** [Configuration Management of Distributed Systems over Unreliable and Hostile Networks](https://terokarvinen.com/palvelinten-hallinta/Karvinen-2023-Configuration-Management-of-Distributed-Systems-over-Unreliable-and-Hostile-Networks.pdf). Kohdat 4.12.1, 4.12.2 ja 4.12.3.1, s. 112–117. Käytetty useana päivänä 13.–17.11.2026.
 
 - **Karvinen, T. 2026.** [Palvelinten hallinta](https://terokarvinen.com/palvelinten-hallinta/). Tehtävän h4 Pizza Fantasia tehtävänanto ja ohjeet. Käytetty useana päivänä 13.–17.11.2026.
