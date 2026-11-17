@@ -319,7 +319,7 @@ mosquitto_pub -h 127.0.0.1 -p 1885 -t 'h4/pizza' -m 'Portin vaihto onnistui: 188
 
 *Portin vaihto onnistui.*
 
-## d) Paikat vaihtoon
+## d) Paikka remonttiin
 
 Poistin ensin asennuksen komennolla:
 
@@ -414,7 +414,7 @@ systemctl show mosquitto -p MainPID -p ExecMainStartTimestamp
 
 ## Loppupohdinta
 
-Ansible on erittäin käytännöllinen. Jään tietenkin pohtimaan mihin kaikkeen Ansible venyy. Oli hienoa huomata, että poistettu demoni ja asetukset palautettii ilman käsin asentamista. 
+Ansible on erittäin käytännöllinen. Jään tietenkin pohtimaan mihin kaikkeen Ansible venyy. Oli hienoa huomata, että poistettu demoni ja asetukset palautettiin ilman käsin asentamista. 
 
 Huomasin, että omat suurimmat virheeni ovat edelleen kirjoitusvirheitä. Tästä oppineena aion kiinnittää enemmän huomiota kirjoittamiseen enkä vain painaa Enteriä; Ainakin omalla kohdallani vianetsintä kannattaa aina aloittaa siitä. 
 
