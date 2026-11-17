@@ -226,7 +226,30 @@ allow_anonymous true
 
   *Vaiheita poistosta*
 
-  
+- Menin kansioon ansible ja suoritin `ansible-playbook -i hosts.ini h4.yml --ask-become-pass` *Side note*: `ansible-playbook -i hosts.ini h4.yml -K` tekisi saman.
+
+-Testasin vielä että Mosquitto toimii. Käytin ensin väärää porttia 1884. Korjasin asian ja alkoi toimia.
+
+![Toimii](images\jees.png)
+
+*Yhteyden testaus*
+
+## e) Idempotetntti
+
+![Korjaus](images\korjaus.png)
+
+*Idempotentti a*
+
+Ajoin sitten 
+
+`systemctl show mosquitto -p MainPID -p ExecMainStartTimestamp
+ansible-playbook -i hosts.ini h4.yml --ask-become-pass
+systemctl show mosquitto -p MainPID -p ExecMainStartTimestamp`
+
+![Idempotentti](images\idempotentti.png)
+
+*Idempotentti b*
+
 
 
 
@@ -243,5 +266,3 @@ allow_anonymous true
 
 - [Karvinen 2026: Palvelinten hallinta - h3 Pizza Fantasia](https://terokarvinen.com/palvelinten-hallinta/) - Tehtävänanto ja ohjeet.
 
-- [](https://t) -
-e
