@@ -144,9 +144,6 @@ Asennusohjelma huomautti, että luomaani konfiguraatiotiedostoa ei poistettu, jo
 sudo rm -f /etc/mosquitto/conf.d/h4.conf
 ```
 
-![Mosquitton poisto](images/purge.png)
-
-*Mosquitton poisto.*
 
 ### Ansible-roolin luominen
 
@@ -381,6 +378,10 @@ ansible-playbook -i hosts.ini h4.yml --ask-become-pass
 
 Testasin vielä, että Mosquitto toimii. Käytin ensin väärää porttia 1884. Korjasin asian, ja yhteys alkoi toimia.
 
+![Korjaus](images/korjaus.png)
+
+*Korjaus*
+
 ![Toimii](images/jees.png)
 
 *Yhteyden testaus.*
@@ -389,7 +390,7 @@ Testasin vielä, että Mosquitto toimii. Käytin ensin väärää porttia 1884. 
 
 ![Korjaus](images/korjaus.png)
 
-*Idempotentti a.*
+*Korjaus*
 
 Ajoin sitten seuraavat komennot:
 
@@ -401,7 +402,8 @@ systemctl show mosquitto -p MainPID -p ExecMainStartTimestamp
 
 ![Idempotentti](images/idempotentti.png)
 
-*Idempotentti b.*
+*Idempotenssi*
+
 
 ## Lähteet
 
