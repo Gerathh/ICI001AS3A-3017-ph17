@@ -41,7 +41,7 @@
 
 ## a) Räpylä
 
-Valitsin asennettavaksi Eclipse Mosquitton. Se on kevyt, avoimen lähdekoodin viestinvälittäjä (message broker). Mosquitto käyttää MQTT-protokollaa ja mahdollistaa IoT-laitteiden ja muiden laitteiden välisen kommunikoinnin.
+Valitsin asennettavaksi Eclipse Mosquitton. Se on kevyt, avoimen lähdekoodin viestinvälittäjä (message broker). Mosquitto käyttää MQTT-protokollaa (Eclipse Foundation) ja mahdollistaa IoT-laitteiden ja muiden laitteiden välisen kommunikoinnin.
 
 Aloitin asentamisen:
 
@@ -343,7 +343,7 @@ test ! -e /etc/mosquitto/conf.d/h4.conf && echo "puuttuu"
 
 Komento ei tulostanut mitään.
 
-Seuraavaksi tarkistin vielä paketin tilan:
+Seuraavaksi tarkistin vielä paketin asennuksen tilan`dpkg-query`-komennolla. Valinta `-W` näyttää paketin tiedot ja `-f` määrittää tulosteen muodon (Debian, dpkg-query(1)).:
 
 ```bash
 dpkg-query -W -f='${binary:Package}: ${Status}\n' mosquitto
@@ -405,7 +405,18 @@ systemctl show mosquitto -p MainPID -p ExecMainStartTimestamp
 
 ## Lähteet
 
-- [Karvinen 2023: Configuration Management of Distributed Systems over Unreliable and Hostile Networks](https://terokarvinen.com/palvelinten-hallinta/Karvinen-2023-Configuration-Management-of-Distributed-Systems-over-Unreliable-and-Hostile-Networks.pdf), kohdat 4.12.1, 4.12.2 ja 4.12.3.1, s. 112–117.
-- [Eclipse Mosquitto: projektin kuvaus](https://projects.eclipse.org/projects/iot.mosquitto).
-- [Mosquitto Documentation](https://mosquitto.org/documentation/).
-- [Karvinen 2026: Palvelinten hallinta – h4 Pizza Fantasia](https://terokarvinen.com/palvelinten-hallinta/) – tehtävänanto ja ohjeet.
+## Lähteet
+
+- **Karvinen, T. 2023.** [Configuration Management of Distributed Systems over Unreliable and Hostile Networks](https://terokarvinen.com/palvelinten-hallinta/Karvinen-2023-Configuration-Management-of-Distributed-Systems-over-Unreliable-and-Hostile-Networks.pdf). Kohdat 4.12.1, 4.12.2 ja 4.12.3.1, s. 112–117. Käytetty useana päivänä 13.–17.11.2026.
+
+- **Karvinen, T. 2026.** [Palvelinten hallinta](https://terokarvinen.com/palvelinten-hallinta/). Tehtävän h4 Pizza Fantasia tehtävänanto ja ohjeet. Käytetty useana päivänä 13.–17.11.2026.
+
+- **Eclipse Foundation.** [Eclipse Mosquitto](https://projects.eclipse.org/projects/iot.mosquitto). Mosquitton projektikuvaus. Viitattu 15.11.2026.
+
+- **Eclipse Mosquitto.** [Documentation](https://mosquitto.org/documentation/). Mosquitton dokumentaatio. Käytetty useana päivänä 13.–17.11.2026.
+
+- **Debian.** [dpkg-query(1) – Debian 13 ”Trixie”](https://manpages.debian.org/trixie/dpkg/dpkg-query.1.en.html). Pakettien tietojen ja asennustilan tarkistaminen sekä tulosteen muotoilu valinnoilla `-W` ja `-f`. Viitattu 17.11.2026.
+
+## Tekoälyn käyttö
+
+- **ChatGPT-6 (OpenAI), 17.11.2026.** Käytin ChatGPT:tä oman raporttitekstini Markdown-muotoiluun GitHubia varten sekä kirjoitusvirheiden korjaamiseen.
