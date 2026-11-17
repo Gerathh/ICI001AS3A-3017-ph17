@@ -37,7 +37,7 @@
 - Järjestelmän tulisi olla idempotentti: muutoksia tehdään vain, jos järjestelmä ei ole jo oikeassa tilassa.
 - `exec` ja tiedostojen hallinta (`file`, `directory`, `symlink`) ovat pohjimmaiset rakennuspalikat. Niiden varaan voidaan rakentaa esimerkiksi pakettien, palveluiden ja käyttäjien hallinta sekä edelleen korkeamman tason toimintoja.
 
-**Ajatuksia:** Tulee mieleen makrot – ihmistä helpottamaan ja nopeuttamaan rutiininomaisia töitä.
+**Ajatuksia:** Tulee mieleen makrot. 
 
 ## a) Räpylä
 
