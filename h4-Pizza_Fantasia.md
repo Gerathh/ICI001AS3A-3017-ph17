@@ -407,7 +407,7 @@ systemctl show mosquitto -p MainPID -p ExecMainStartTimestamp
 - MainPID=18305 ja käynnistysaika 17.11.2026 klo 11.50.16 EET pysyivät samoina.
 - Viesti `rikotun palvelun testaus 2` 
 
-![Viimeinen testi](images\korjattuvikatesti.png)
+![Viimeinen testi](images/korjattuvikatesti.png)
 
 *Viimeinen testi*
 
