@@ -386,11 +386,10 @@ Testasin vielä, että Mosquitto toimii. Käytin ensin väärää porttia 1884. 
 
 *Yhteyden testaus.*
 
+
+
 ## e) Idempotentti
 
-![Korjaus](images/korjaus.png)
-
-*Korjaus*
 
 Ajoin sitten seuraavat komennot:
 
@@ -401,6 +400,15 @@ systemctl show mosquitto -p MainPID -p ExecMainStartTimestamp
 ```
 
 ![Idempotentti](images/idempotentti.png)
+
+- Ansible: ok=5, changed=0, failed=0.
+- Handleria ei suoritettu.
+- MainPID=18305 ja käynnistysaika 17.11.2026 klo 11.50.16 EET pysyivät samoina.
+- Viesti `rikotun palvelun testaus 2` 
+
+![Viimeinen testi](images\korjattuvikatesti.png)
+
+*Viimeinen testi*
 
 *Idempotenssi*
 
@@ -419,4 +427,4 @@ systemctl show mosquitto -p MainPID -p ExecMainStartTimestamp
 
 ## Tekoälyn käyttö
 
-- **ChatGPT-6 (OpenAI), 17.11.2026.** Käytin ChatGPT:tä oman raporttitekstini Markdown-muotoiluun GitHubia varten sekä kirjoitusvirheiden korjaamiseen.
+- **ChatGPT-6.0 (OpenAI), 17.11.2026.** Käytin ChatGPT:tä oman raporttitekstini Markdown-muotoiluun GitHubia varten sekä kirjoitusvirheiden korjaamiseen.
