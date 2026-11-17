@@ -219,10 +219,14 @@ allow_anonymous true
 - Testasin `test ! -e /etc/mosquitto/conf.d/h4.conf && echo "puuttuu"`ja ei tullut vastausta.
 - Suraavaksi testasin vielä asennusta: `dpkg-query -W -f='${binary:Package}: ${Status}\n' mosquitto`
 - Sitten vielä asetustiedoston olemassaoloa `ls -l /etc/mosquitto/conf.d/h4.conf` - Asetustiedosto oli vielä paikallan, joten poistin sen `sudo rm /etc/mosquitto/conf.d/h4.conf`
-- Ajoin vielä `test ! -e /etc/mosquitto/conf.d/h4.conf && echo "puuttuu"` - tällä kertaa tuli vastaus
-- 
+- Ajoin vielä `test ! -e /etc/mosquitto/conf.d/h4.conf && echo "puuttuu"` - 
+  
 
-- Seuraavaksi poistin
+  ![Rikottu asennus](images\purge.png)
+
+  *Vaiheita poistosta*
+
+  
 
 
 
