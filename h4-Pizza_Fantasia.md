@@ -58,6 +58,7 @@ Muokkasin tämän jälkeen konfiguraatiotiedostoa:
 ```bash
 sudo nano /etc/mosquitto/conf.d/h4.conf
 ```
+Asetusten selitykset: [mosquitto.conf(5), listener ja allow_anonymous](https://manpages.debian.org/trixie/mosquitto/mosquitto.conf.5.en.html).
 
 Tarkoituksena oli lisätä sinne kaksi riviä:
 
@@ -412,6 +413,16 @@ systemctl show mosquitto -p MainPID -p ExecMainStartTimestamp
 
 *Idempotenssi*
 
+## Loppupohdinta
+
+Ansible on erittäin käytännöllinen. Jään tietenkin pohtimaan mihin kaikkeen Ansible venyy. Oli hienoa huomata, että poistettu demoni ja asetukset palautettii ilman käsim asentamista. 
+
+Huomasin, että omat suurimmat virheeni ovat edelleen kirjoitusvirheitä. Tästä oppineena aion kiinnittää enemmän huomiota kirjoittamiseen enkä vain painaa Enteriä; Ainakin omalla kohdallani vianetsintä kannattaa aina aloittaa siitä. 
+
+Oli myös hienoa nähdä idempotenssi käytännössä: uudelleenajossa tuloksena oli changed=0, ja palvelun käynnistysaika pysyi muuttumattomana. Ansible ei tehnyt tarpeettomia muutoksia eikä käynnistänyt palvelua uudelleen. 
+
+Seuraavaksi haluaisin kokeilla tätä suuremmalla laitemäärällä.
+
 
 ## Lähteet
 
@@ -419,11 +430,15 @@ systemctl show mosquitto -p MainPID -p ExecMainStartTimestamp
 
 - **Karvinen, T. 2026.** [Palvelinten hallinta](https://terokarvinen.com/palvelinten-hallinta/). Tehtävän h4 Pizza Fantasia tehtävänanto ja ohjeet. Käytetty useana päivänä 13.–17.11.2026.
 
+- **Eclipse Mosquitto / Debian.** [mosquitto.conf(5) – Debian 13 Trixie](https://manpages.debian.org/trixie/mosquitto/mosquitto.conf.5.en.html). `listener`- ja `allow_anonymous`-asetusten toiminta.
+
 - **Eclipse Foundation.** [Eclipse Mosquitto](https://projects.eclipse.org/projects/iot.mosquitto). Mosquitton projektikuvaus. Viitattu 15.11.2026.
 
 - **Eclipse Mosquitto.** [Documentation](https://mosquitto.org/documentation/). Mosquitton dokumentaatio. Käytetty useana päivänä 13.–17.11.2026.
 
 - **Debian.** [dpkg-query(1) – Debian 13 ”Trixie”](https://manpages.debian.org/trixie/dpkg/dpkg-query.1.en.html). Pakettien tietojen ja asennustilan tarkistaminen sekä tulosteen muotoilu valinnoilla `-W` ja `-f`. Viitattu 17.11.2026.
+
+- **Eclipse Mosquitto / Debian.** [mosquitto.conf(5) – Debian 13 Trixie](https://manpages.debian.org/trixie/mosquitto/mosquitto.conf.5.en.html). `listener`- ja `allow_anonymous`-asetusten toiminta. Käytetty useana päivänä 13.–17.11.2026.
 
 ## Tekoälyn käyttö
 
