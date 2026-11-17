@@ -43,7 +43,7 @@
 
 Valitsin asennettavaksi Eclipse Mosquitton. Se on kevyt, avoimen lähdekoodin viestinvälittäjä (message broker). Mosquitto käyttää MQTT-protokollaa (Eclipse Foundation) ja mahdollistaa IoT-laitteiden ja muiden laitteiden välisen kommunikoinnin.
 
-Aloitin asentamisen:
+### Aloitin asentamisen:
 
 ![Asennus](images/asennusensin.png)
 
