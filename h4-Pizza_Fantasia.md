@@ -440,7 +440,7 @@ Seuraavaksi haluaisin kokeilla tätä suuremmalla laitemäärällä.
 
 - **Eclipse Mosquitto / Debian.** [mosquitto.conf(5) – Debian 13 Trixie](https://manpages.debian.org/trixie/mosquitto/mosquitto.conf.5.en.html). `listener`- ja `allow_anonymous`-asetusten toiminta. Käytetty useana päivänä 13.–17.11.2026.
 
-- **Ansible Handler** [Ansible Handler documentation](https://manpages.debian.org/trixie/mosquitto/mosquitto.conf.5.en.html). Käytetty useana päivänä 13.–17.11.2026.
+- **Ansible Handler** [Ansible Handler documentation](https://docs.ansible.com/projects/ansible/latest/playbook_guide/playbooks_handlers.html). Käytetty useana päivänä 13.–17.11.2026.
 
 ## Tekoälyn käyttö
 
