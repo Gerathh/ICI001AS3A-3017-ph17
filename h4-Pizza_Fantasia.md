@@ -442,6 +442,7 @@ Seuraavaksi haluaisin kokeilla tätä suuremmalla laitemäärällä.
 
 - **Ansible Handler** [Ansible Handler documentation](https://docs.ansible.com/projects/ansible/latest/playbook_guide/playbooks_handlers.html). Käytetty useana päivänä 13.–17.11.2026.
 
+
 ## Tekoälyn käyttö
 
 - **ChatGPT-6.0 (OpenAI), 17.11.2026.** Käytin ChatGPT:tä oman raporttitekstini Markdown-muotoiluun GitHubia varten sekä kirjoitusvirheiden korjaamiseen.
