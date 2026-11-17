@@ -78,7 +78,7 @@
 
 - Suoritettuani `sudo journalctl -u mosquitto -n 20 --no-pager` huomasin, että minulla oli kirjoitusvirhe h4.conf:ssa.
 
-- `sudo nano /etc/mosquitto/conf.d/h4.conf` ja korjasin sielät toisen rivin kirjoitusvirheen `allow anonymous true` --> `allow_anonymous true`
+- Ajoin `sudo nano /etc/mosquitto/conf.d/h4.conf` ja korjasin sielät toisen rivin kirjoitusvirheen `allow anonymous true` --> `allow_anonymous true`
 
 - Tämän jälkeen mosquitto käynnistyi uudelleen ilman ongelmia
 
