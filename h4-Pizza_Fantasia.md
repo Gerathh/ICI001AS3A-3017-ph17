@@ -407,10 +407,11 @@ systemctl show mosquitto -p MainPID -p ExecMainStartTimestamp
 - MainPID=18305 ja käynnistysaika 17.11.2026 klo 11.50.16 EET pysyivät samoina.
 - Viesti `rikotun palvelun testaus 2` 
 
-![Viimeinen testi](images/korjattuvikatesti.png)
+![Viimeinen testi](images\korjattuvikatesti.png)
 
 *Viimeinen testi*
 
+*Idempotenssi*
 
 ## Loppupohdinta
 
@@ -438,6 +439,8 @@ Seuraavaksi haluaisin kokeilla tätä suuremmalla laitemäärällä.
 - **Debian.** [dpkg-query(1) – Debian 13 ”Trixie”](https://manpages.debian.org/trixie/dpkg/dpkg-query.1.en.html). Pakettien tietojen ja asennustilan tarkistaminen sekä tulosteen muotoilu valinnoilla `-W` ja `-f`. Viitattu 17.11.2026.
 
 - **Eclipse Mosquitto / Debian.** [mosquitto.conf(5) – Debian 13 Trixie](https://manpages.debian.org/trixie/mosquitto/mosquitto.conf.5.en.html). `listener`- ja `allow_anonymous`-asetusten toiminta. Käytetty useana päivänä 13.–17.11.2026.
+
+- **Ansible Handler** [Ansible Handler documentation](https://manpages.debian.org/trixie/mosquitto/mosquitto.conf.5.en.html). Käytetty useana päivänä 13.–17.11.2026.
 
 ## Tekoälyn käyttö
 
