@@ -213,6 +213,20 @@ allow_anonymous true
 
 *Portin vaihto onnistui*
 
+## d) Paikat vaihtoon
+
+- Postin ensin asennuksen komennolla `sudo apt purge mosquitto`, tämän jälkeen testasin yhteyttä komennolla `mosquitto_pub -h 127.0.0.1 -p 1885 -t 'h4/pizza' -m 'Rikotun palvelun testi'`
+- Testasin `test ! -e /etc/mosquitto/conf.d/h4.conf && echo "puuttuu"`ja ei tullut vastausta.
+- Suraavaksi testasin vielä asennusta: `dpkg-query -W -f='${binary:Package}: ${Status}\n' mosquitto`
+- Sitten vielä asetustiedoston olemassaoloa `ls -l /etc/mosquitto/conf.d/h4.conf` - Asetustiedosto oli vielä paikallan, joten poistin sen `sudo rm /etc/mosquitto/conf.d/h4.conf`
+- Ajoin vielä `test ! -e /etc/mosquitto/conf.d/h4.conf && echo "puuttuu"` - tällä kertaa tuli vastaus
+- 
+
+- Seuraavaksi poistin
+
+
+
+
 ### Lähde
 
 - [Karvinen 2023: Configuration Management of Distributed Systems over Unreliable and Hostile Networks](https://terokarvinen.com/palvelinten-hallinta/Karvinen-2023-Configuration-Management-of-Distributed-Systems-over-Unreliable-and-Hostile-Networks.pdf), kohdat 4.12.1, 4.12.2 ja 4.12.3.1, s. 112–117.
