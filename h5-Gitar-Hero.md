@@ -2,7 +2,7 @@
 
 Jere Pellinen · 23.11.2026 · Palvelinten hallinta ICI001AS3A-3017 · Haaga-Helia · Tero Karvinen
 
-Mulla oli käytössä Debian 13, joka pyöri Hyper-V:ssä Windows 11 -koneella. GitHub oli jo tuttu entuudestaan ja Gitiäkin olin käyttänyt PowerShellissä. Nyt tein koko harjoituksen Debianin Bashissa. [Oma sunshine-encore-varasto](https://github.com/Gerathh/sunshine-encore)
+Minulla oli käytössä Debian 13, joka pyöri Hyper-V:ssä Windows 11 -koneella. GitHub oli jo tuttu entuudestaan ja Gitiäkin olin käyttänyt PowerShellissä. Nyt tein koko harjoituksen Debianin Bashissa. [Oma sunshine-encore-varasto](https://github.com/Gerathh/sunshine-encore)
 
 ## x) Lue ja tiivistä
 
