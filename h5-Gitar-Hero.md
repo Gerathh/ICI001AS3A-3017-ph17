@@ -193,7 +193,7 @@ Lokissa näkyi nyt peräkkäin lähtöversio `c964378` ja sen päälle tehty por
 
 ## f) Projektipari
 
-Moodlen ilmoituksissa kaikilla oli pari. Jätin sinne uuden ilmoituksen. Tätä kirjoittaessa pari vielä haussa.
+Projektipari on löytynyt [päivitetty 25.11.2026 klo 12:07]
 
 ## Loppupohdinta
 
