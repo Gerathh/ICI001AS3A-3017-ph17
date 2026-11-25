@@ -1,6 +1,13 @@
 # h5 Gitar Hero
 
-Jere Pellinen · 23.11.2026 · Palvelinten hallinta ICI001AS3A-3017 · Haaga-Helia · Tero Karvinen
+## Ympäristö
+
+- **Päivämäärä:** 25.11.2026
+- **Tekijä:** Jere Pellinen
+- **Kurssi:** Palvelinten hallinta ICI001AS3A-3017-ph17
+- **Oppilaitos:** Haaga-Helia ammattikorkeakoulu
+- **Opettaja:** Tero Karvinen
+- **Ympäristö:** Debian 13, Hyper-V, paikallinen virtuaalikone
 
 Minulla oli käytössä Debian 13, joka pyöri Hyper-V:ssä Windows 11 -koneella. GitHub oli jo tuttu entuudestaan ja Gitiäkin olin käyttänyt PowerShellissä. Nyt tein koko harjoituksen Debianin Bashissa. [Oma sunshine-encore-varasto](https://github.com/Gerathh/sunshine-encore)
 
@@ -72,7 +79,7 @@ git commit -m "Debian VM:ää käytetty tähän harjoitukseen"
 git push
 ```
 
-Muokkasin README:n kuvausta ja kirjoitin kursiivilla ”Tämä on kirjoitettu Debian virtuaalikoneelta”. Diffi näytti myös loppuun jääneet tyhjät rivit. Commitiksi tuli `4534ac5`. Pushin jälkeen avasin README:n selaimessa. Siellähän se sama rivi näkyi GitHubissakin. Edellinen versio oli `5d69c44`.
+Muokkasin README.md:n kuvausta ja kirjoitin kursiivilla ”Tämä on kirjoitettu Debian virtuaalikoneelta”. Diffi näytti myös loppuun jääneet tyhjät rivit. Commitiksi tuli `4534ac5`. Pushin jälkeen avasin README:n selaimessa. Sama rivi näkyi GitHubissakin. Edellinen versio oli `5d69c44`.
 
 ![Muokattu README GitHubin esikatselussa](images/git-muutostehty.png)
 
