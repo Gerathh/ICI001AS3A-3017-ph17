@@ -52,7 +52,7 @@ Tein GitHubiin tätä tehtävää varten uuden repon. Nimeksi tuli `sunshine-enc
 
 ## b) Dolly
 
-Kokeilin aluksi, tunnistaako GitHub mut Debianilta käsin. Ajoin `ssh -T git@github.com`. SSH kysyi ensin, hyväksynkö palvelimen avaimen. Hyväksyin sen ja avain tallentui `known_hosts`-tiedostoon. Heti perään tuli kuitenkin `Permission denied (publickey)`.
+Kokeilin aluksi, tunnistaako GitHub mut Debianilta käsin. Ajoin `ssh -T (avaa-T) git@github.com`. SSH kysyi ensin, hyväksynkö palvelimen avaimen. Hyväksyin sen ja avain tallentui `known_hosts`-tiedostoon. Heti perään tuli kuitenkin `Permission denied (publickey)`.
 
 Avainta etsiessä multa jäi piste pois polusta `~/.ssh`. Kirjoitin siis `~/ssh`. Lainausmerkkikin jäi auki, joten Bash jäi odottamaan lisää tekstiä ja näytti rivin alussa merkin `>`. Lopulta `ls ~/.ssh` näytti tiedoston `id_ed25519.pub`. Lisäsin sen julkisen avaimen GitHubiin ja kokeilin SSH-yhteyttä uudestaan. Tällä kertaa vastassa oli `Hi Gerathh!`.
 
